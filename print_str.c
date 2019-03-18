@@ -43,7 +43,7 @@ int _prints(va_list s)
 
 /**
  *_printpc - prints another percentage
- *@
+ *@c: va_list unused
  *Return: 0 if success
  */
 
