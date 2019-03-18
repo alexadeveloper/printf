@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	char *auxStr = (char *)format;
 
 	va_list(valist);
-	va_start(valist,format);
+	va_start(valist, format);
 	while (format != NULL && *(format + i) != '\0')
 	{
 		f = NULL;
