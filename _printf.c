@@ -8,7 +8,7 @@
 
 int _printf(const char * const format, ...)
 {
-	unsigned int i = 0;
+	unsigned int i = 0, j = 0;
 	void (*f)(va_list) = NULL;
 
 	va_list(valist);
