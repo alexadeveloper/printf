@@ -1,6 +1,21 @@
 #include "holberton.h"
 
 /**
+  *print_num - recursion function
+  *@number: is the int
+  *Return: 0 it is ok, 1 it is fails
+ */
+
+int print_num(int number)
+{
+	if (number / 10)
+	{
+		print_num(number / 10);
+	}
+	_putchar((number % 10) + '0');
+return (0);
+}
+/**
   *_printd - Print a int
   *@n: is a va_list that will receive a int
   *Return: 0 it is ok, 1 it is fails
@@ -15,8 +30,6 @@ int _printd(va_list n)
 	{
 		_putchar('-');
 	}
-	if (number / 10)
-		_printd(number / 10);
-	_putchar((number % 10) + '0');
+	print_num(number);
 return (0);
 }
