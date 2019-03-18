@@ -2,4 +2,5 @@
 #define __HOLBERTON__H
 
 int _putchar(char c);
+int _strlen(char *s);
 #endif
