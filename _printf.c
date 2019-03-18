@@ -2,14 +2,14 @@
 
 /**
  *_printf - prints a string, char, integer, see the manual for more info.
- *@str: string to be printed with options inside
- *Return: none
+ *@format: string to be printed with options inside
+ *Return: amount of characters printed
  */
 
 int _printf(const char * const format, ...)
 {
 	unsigned int i = 0, j = 0;
-	void (*f)(va_list) = NULL;
+	int (*f)(va_list) = NULL;
 
 	va_list(valist);
 	va_start(valist, format);

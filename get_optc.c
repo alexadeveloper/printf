@@ -1,19 +1,19 @@
 #include "holberton.h"
 
 /**
- *get_opt - selects the option of a string within print f
+ *get_opc - selects the option of a string within print f
  *@c: char that means one of the saved options
  *Return: pointer to consequent function
  */
 
-void (*get_opt(char *c))(va_list)
+void (*get_opc(char *c))(va_list)
 {
 	fmt fmts[] = {
-		{"c", printc},
-		{"s", prints},
+		{"c", _printc},
+/*		{"s", prints},
 		{"%", printpc},
 		{"i", printi},
-		{"d", printd},
+		{"d", printd},*/
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
