@@ -12,8 +12,6 @@ int (*get_opc(char *c))(va_list)
 		{"c", _printc},
 		{"s", _prints},
 		{"%", _printpc},
-/*		{"i", printi},
-		{"d", printd},*/
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
