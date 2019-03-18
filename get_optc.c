@@ -6,7 +6,7 @@
  *Return: pointer to consequent function
  */
 
-void (*get_opc(char *c))(va_list)
+int (*get_opc(char *c))(va_list)
 {
 	fmt fmts[] = {
 		{"c", _printc},
@@ -20,7 +20,7 @@ void (*get_opc(char *c))(va_list)
 
 	while (fmts[i].c != NULL)
 	{
-		if (*(fmts[i].c) == *c && *(c + 1) == '\0')
+		if (*(fmts[i].c) == *c)
 		{
 			return (fmts[i].func_str);
 		}

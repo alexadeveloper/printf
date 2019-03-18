@@ -12,7 +12,10 @@ int _strlen(char *s);
 int _printc(va_list c);
 
 /*get_opt.c*/
-void (*get_opc(char *c))(va_list);
+int (*get_opc(char *c))(va_list);
+
+/*_printf.c*/
+int _printf(const char * const format, ...);
 
 /**
  *struct fmt_t- structure for the format
