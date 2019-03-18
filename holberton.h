@@ -10,6 +10,7 @@ int _strlen(char *s);
 
 /*print_str.c*/
 int _printc(va_list c);
+int _prints(va_list c);
 
 /*get_opt.c*/
 int (*get_opc(char *c))(va_list);
