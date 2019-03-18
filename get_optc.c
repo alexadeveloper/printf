@@ -10,9 +10,10 @@ void (*get_opt(char *c))(va_list)
 {
 	fmt fmts[] = {
 		{"c", printc},
-		{"i", printi},
-		{"f", printf},
 		{"s", prints},
+		{"%", printpc},
+		{"i", printi},
+		{"d", printd},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;

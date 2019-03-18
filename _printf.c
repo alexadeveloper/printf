@@ -6,24 +6,25 @@
  *Return: none
  */
 
-void _printf(const char * const str, ...)
+int _printf(const char * const format, ...)
 {
 	unsigned int i = 0;
 	void (*f)(va_list) = NULL;
 
 	va_list(valist);
-	va_start(valist, str);
-	while (str != NULL && *(str + i) != '\0')
+	va_start(valist, format);
+	while (format != NULL && *(format + i) != '\0')
 	{
-		if (*(str + i) == "%")
+		if (*(format + i) == "%")
 		{
 			i++;
-			f = get_opc(str + i);
+			f = get_opc(format + i);
 			if (f != NULL)
 				f(valist);
 		}
-		_putchar(str + i);
+		_putchar(format + i);
 		i++;
 	}
 	va_end(valist);
+	return (i);
 }
