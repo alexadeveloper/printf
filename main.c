@@ -9,7 +9,6 @@
  */
 int main(void)
 {
-	char *s = "hola";
-	_printf("Character:[%s]\n", s);
+	_printf("Character:[%%]\n");
 	return (0);
 }
