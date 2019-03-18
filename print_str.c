@@ -38,6 +38,5 @@ int _prints(va_list s)
 		_putchar(string[i]);
 		i++;
 	}
-	_putchar('\n');
 	return (0);
 }
