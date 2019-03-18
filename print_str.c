@@ -17,7 +17,7 @@ int _printc(va_list c)
 
 /**
  *_prints - print a string
- *@s: is a string
+ *@s: is a string in a va_list
  *Return: 0 it is ok, 1 it is fail
  */
 
@@ -38,5 +38,18 @@ int _prints(va_list s)
 		_putchar(string[i]);
 		i++;
 	}
+	return (0);
+}
+
+/**
+ *_printpc - prints another percentage
+ *@
+ *Return: 0 if success
+ */
+
+int _printpc(va_list c)
+{
+	(void) c;
+	_putchar('%');
 	return (0);
 }
