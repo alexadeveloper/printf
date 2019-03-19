@@ -1,0 +1,28 @@
+.TH man 3 "March 18 2019" "0.00" "_printf man page"
+.SH NAME
+_printf - sends formatted output to stdout
+.SH SYNOPSIS
+#include "holberton.h"
+int _printf(const char * const format, ...);
+.SH DESCRIPTION
+The functions produce output according to a format. They are called with a va_list instead of a variable number of arguments. The function do not call the va_end macro. Because they invoke yhe va_arg macro, the value of ap is undefined after the call.
+.br
+c prints a char
+.br
+s prints a string
+.br
+% print the character %
+.br
+d prints a integer
+.br
+i prints a integer
+.SH FILES
+get_opc.c: this is the function that selects what special option has been found and returns a pointer to the special function that prints the special value.
+.br
+print_num.c: this is the file where all the functions that print numbers are found.
+.br
+print_str.c: this is the file where all the functions that print strings are found.
+.br
+string.c: this file has all the function to do things with strings (compare, length, putchar).
+.SH AUTOR
+HAROLDO VELEZ & JESSICA SANDOVAL for HOLBERTON COLOMBIA
