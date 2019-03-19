@@ -45,7 +45,7 @@ int _printd(va_list n)
   *@cont: how many send
   *Return: the cant of numbers send it
  */
-int print_numb(int number, int cont)
+int print_numb(unsigned int number, int cont)
 {
 	if (number == 0)
 	{
@@ -55,7 +55,7 @@ int print_numb(int number, int cont)
 	{
 		cont++;
 		cont = print_numb((number / 2), cont);
-		_putchar(number % 2 + '0');
+		_putchar((number % 2) + '0');
 	}
 return (cont);
 }
