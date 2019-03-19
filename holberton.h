@@ -15,7 +15,7 @@ int _printpc(va_list c);
 
 /*print_num.c*/
 int _printd(va_list n);
-int print_num(int n);
+int print_num(int n, int cont);
 
 /*get_opt.c*/
 int (*get_opc(char *c))(va_list);

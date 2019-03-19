@@ -9,11 +9,12 @@
  */
 int main(void)
 {
-	char *s = "hola";
 	int number = (unsigned int)INT_MAX + 1024;
-	
-	_printf("Character:[%s]\n", s);
-	_printf("Length:[%d]\n", number);
-	printf("Length:[%i]\n", number);
+	int i, j;
+
+	i = _printf("Length:[%d]\n", number);
+	j = printf("Length:[%d]\n", number);
+	printf("fake:[%i]\n", i);
+	printf("true:[%i]\n", j);
 	return (0);
 }
