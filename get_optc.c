@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *get_opc - selects the option of a string within print f
+ *get_opc - selects the option of a strin  within print f
  *@c: char that means one of the saved options
  *Return: pointer to consequent function
  */
@@ -14,6 +14,7 @@ int (*get_opc(char *c))(va_list)
 		{"%", _printpc},
 		{"d", _printd},
 		{"i", _printd},
+		{"b", _printb},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;

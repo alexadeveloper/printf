@@ -11,8 +11,8 @@ int main(void)
 {
 	int i, j;
 
-	i = _printf("%s hola\n", "HELO");
-	j = printf("%s hola\n", "HELO");
+	i = _printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	j = printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
 	printf("EL FAKE: %i\n", i);
 	printf("EL VERDADERO: %i\n", j);
 
