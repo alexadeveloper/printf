@@ -46,7 +46,7 @@ int _printd(va_list n)
   *@cont: how many send
   *Return: the cant of numbers send it
  */
-int print_numb(int number, int cont)
+int print_numb(unsigned int number, int cont)
 {
 	if (number == 0)
 	{
@@ -67,7 +67,7 @@ int print_numb(int number, int cont)
  */
 int _printb(va_list n)
 {
-	int number;
+	unsigned int number;
 	int cont;
 
 	number = (int)va_arg(n, int);
