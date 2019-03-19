@@ -11,6 +11,7 @@ int _strlen(char *s);
 /*print_str.c*/
 int _printc(va_list c);
 int _prints(va_list c);
+int _printpc(va_list c);
 
 /*print_num.c*/
 int _printd(va_list n);

@@ -11,7 +11,7 @@ int (*get_opc(char *c))(va_list)
 	fmt fmts[] = {
 		{"c", _printc},
 		{"s", _prints},
-		{"%", printpc},
+		{"%", _printpc},
 		{"d", _printd},
 		{"i", _printd},
 		{NULL, NULL}
