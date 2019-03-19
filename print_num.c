@@ -29,7 +29,11 @@ int _printd(va_list n)
 	if (number < 0)
 	{
 		_putchar('-');
+		print_num(number * (-1));
 	}
-	print_num(number);
+	else
+	{
+		print_num(number);
+	}
 return (0);
 }

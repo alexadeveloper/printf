@@ -10,10 +10,10 @@
 int main(void)
 {
 	char *s = "hola";
-	int number = 125;
+	int number = (unsigned int)INT_MAX + 1024;
 	
 	_printf("Character:[%s]\n", s);
 	_printf("Length:[%d]\n", number);
-	printf("Length:[%d]\n", number);
+	printf("Length:[%i]\n", number);
 	return (0);
 }
