@@ -3,17 +3,19 @@
 /**
   *print_num - recursion function
   *@number: is the int
+  *@cont: how many send
   *Return: 0 it is ok, 1 it is fails
  */
 
-int print_num(int number)
+int print_num(int number, int cont)
 {
 	if (number / 10)
 	{
-		print_num(number / 10);
+		cont++;
+		cont = print_num((number / 10), cont);
 	}
 	_putchar((number % 10) + '0');
-	return (0);
+	return (cont);
 }
 /**
   *_printd - Print a int
@@ -24,16 +26,17 @@ int print_num(int number)
 int _printd(va_list n)
 {
 	int number;
+	int cont;
 
 	number = (int)va_arg(n, int);
 	if (number < 0)
 	{
 		_putchar('-');
-		print_num(number * (-1));
+		cont = print_num((number * (-1)), 2);
 	}
 	else
 	{
-		print_num(number);
+		cont = print_num(number, 1);
 	}
-	return (0);
+	return (cont);
 }
