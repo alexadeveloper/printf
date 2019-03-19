@@ -50,15 +50,15 @@ int print_numb(int number, int cont)
 {
 	if (number == 0)
 	{
-		return (0);
+		return (cont - 1);
 	}
 	else
 	{
 		cont++;
-		print_numb((number / 2), cont);
-		_putchar(number % 2);
+		cont = print_numb((number / 2), cont);
+		_putchar((number % 2) + '0');
+		return (cont);
 	}
-return (cont);
 }
 /**
   *_printb - print a binary
@@ -74,11 +74,11 @@ int _printb(va_list n)
 	if (number == 0)
 	{
 		_putchar('0');
-		return (1);
+		cont = 1;
 	}
 	else
 	{
-		cont = print_numb(number, 1);
+		cont = print_numb(number, 0);
 	}
 return (cont);
 }
