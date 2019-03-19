@@ -13,7 +13,7 @@ int print_num(int number)
 		print_num(number / 10);
 	}
 	_putchar((number % 10) + '0');
-return (0);
+	return (0);
 }
 /**
   *_printd - Print a int
@@ -35,5 +35,5 @@ int _printd(va_list n)
 	{
 		print_num(number);
 	}
-return (0);
+	return (0);
 }
