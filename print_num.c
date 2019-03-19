@@ -51,7 +51,7 @@ int print_numb(int number, int cont)
 	if (number == 0)
 	{
 		return (cont - 1);
-	}	
+	}
 	else
 	{
 		cont++;
