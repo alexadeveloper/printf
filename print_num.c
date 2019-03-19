@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
   *print_num - recursion function
   *@number: is the int
