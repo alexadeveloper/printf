@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
   *print_num - recursion function
   *@number: is the int
@@ -50,13 +50,13 @@ int print_numb(int number, int cont)
 {
 	if (number == 0)
 	{
-		return (0);
-	}
+		return (cont - 1);
+	}	
 	else
 	{
 		cont++;
-		print_numb((number / 2), cont);
-		_putchar(number % 2);
+		cont = print_numb((number / 2), cont);
+		_putchar(number % 2 + '0');
 	}
 return (cont);
 }
@@ -67,18 +67,11 @@ return (cont);
  */
 int _printb(va_list n)
 {
-	int number;
-	int cont;
+	unsigned int number;
+	int aux;
 
 	number = (int)va_arg(n, int);
-	if (number == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
-	else
-	{
-		cont = print_numb(number, 1);
-	}
-return (cont);
+	aux = print_numb(number, 1);
+return (aux);
 }
+
