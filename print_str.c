@@ -12,7 +12,7 @@ int _printc(va_list c)
 
 	string = (char)va_arg(c, int);
 	_putchar(string);
-	return (0);
+	return (1);
 }
 
 /**
@@ -25,12 +25,15 @@ int _prints(va_list s)
 {
 	unsigned int length = 0;
 	unsigned int i = 0;
+	char null[] = "(null)";
 	char *string;
 
 	string = va_arg(s, char *);
 	if (string == NULL)
 	{
-	return (1);
+		for (; *(null + i) != '\0'; i++)
+			_putchar(null[i]);
+		return (6);
 	}
 	length = _strlen(string);
 	while (i < length)
@@ -38,18 +41,18 @@ int _prints(va_list s)
 		_putchar(string[i]);
 		i++;
 	}
-	return (0);
+	return (i);
 }
 
 /**
  *_printpc - prints another percentage
  *@c: va_list unused
- *Return: 0 if success
+ *Return: number of elements
  */
 
 int _printpc(va_list c)
 {
 	(void) c;
 	_putchar('%');
-	return (0);
+	return (1);
 }

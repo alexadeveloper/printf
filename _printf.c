@@ -8,12 +8,14 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0;
+	unsigned int i = 0, cont = 0;
 	int (*f)(va_list) = NULL;
 	char *auxStr = (char *)format;
 
 	va_list(valist);
 	va_start(valist, format);
+	if (format == NULL || (_strlen(auxStr) == 1 && *auxStr == '%'))
+		return (-1);
 	while (format != NULL && *(format + i) != '\0')
 	{
 		f = NULL;
@@ -22,12 +24,14 @@ int _printf(const char *format, ...)
 			i++;
 			f = get_opc(auxStr + i);
 			if (f != NULL)
-				f(valist);
+				cont += f(valist) - 2;
+			else
+				_putchar('%');
 		}
 		if (f == NULL)
 			_putchar(*(format + i));
 		i++;
 	}
 	va_end(valist);
-	return (i);
+	return (i + cont);
 }
