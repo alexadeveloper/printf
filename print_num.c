@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
   *print_num - recursion function
   *@number: is the int
@@ -57,8 +56,8 @@ int print_numb(unsigned int number, int cont)
 		cont++;
 		cont = print_numb((number / 2), cont);
 		_putchar((number % 2) + '0');
-		return (cont);
 	}
+return (cont);
 }
 /**
   *_printb - print a binary
@@ -68,17 +67,10 @@ int print_numb(unsigned int number, int cont)
 int _printb(va_list n)
 {
 	unsigned int number;
-	int cont;
+	int aux;
 
 	number = (int)va_arg(n, int);
-	if (number == 0)
-	{
-		_putchar('0');
-		cont = 1;
-	}
-	else
-	{
-		cont = print_numb(number, 0);
-	}
-return (cont);
+	aux = print_numb(number, 1);
+return (aux);
 }
+
