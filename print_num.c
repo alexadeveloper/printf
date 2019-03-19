@@ -11,8 +11,8 @@ int print_num(int number, int cont)
 {
 	if (number / 10)
 	{
-		cont ++;
-		print_num((number / 10), cont);
+		cont++;
+		cont = print_num((number / 10), cont);
 	}
 	_putchar((number % 10) + '0');
 	return (cont);
@@ -26,16 +26,17 @@ int print_num(int number, int cont)
 int _printd(va_list n)
 {
 	int number;
+	int cont;
 
 	number = (int)va_arg(n, int);
 	if (number < 0)
 	{
 		_putchar('-');
-		print_num((number * (-1)), 1);
+		cont = print_num((number * (-1)), 2);
 	}
 	else
 	{
-		print_num(number, 1);
+		cont = print_num(number, 1);
 	}
-	return (0);
+	return (cont);
 }
