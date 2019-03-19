@@ -70,7 +70,15 @@ int _printb(va_list n)
 	int aux;
 
 	number = (int)va_arg(n, int);
-	aux = print_numb(number, 1);
-return (aux);
+	if (number == 0)
+	{
+		aux = 0;
+		_putchar('0');
+	}
+	else
+	{
+		aux = print_numb(number, 1);
+	}
+	return (aux);
 }
 
