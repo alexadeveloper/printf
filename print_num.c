@@ -72,7 +72,7 @@ int _printb(va_list n)
 	number = (int)va_arg(n, int);
 	if (number == 0)
 	{
-		aux = 0;
+		aux = 1;
 		_putchar('0');
 	}
 	else
