@@ -19,7 +19,7 @@ int _printb(va_list n);
 int _printX(va_list n);
 int _printx(va_list n);
 int _printo(va_list n);
-
+int _printu(va_list n);
 
 /*print_numRec.c*/
 int print_numbXo(unsigned int n, int cont, int base);
