@@ -15,9 +15,17 @@ int _printpc(va_list c);
 
 /*print_num.c*/
 int _printd(va_list n);
-int print_num(unsigned int n, int cont);
 int _printb(va_list n);
-int print_numb(unsigned int n, int cont);
+int _printX(va_list n);
+int _printx(va_list n);
+int _printo(va_list n);
+
+
+/*print_numRec.c*/
+int print_numbXo(unsigned int n, int cont, int base);
+int print_num(unsigned int n, int cont);
+int print_numbxo(unsigned int n, int cont, int base);
+
 /*get_opt.c*/
 int (*get_opc(char *c))(va_list);
 

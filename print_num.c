@@ -1,21 +1,5 @@
 #include "holberton.h"
-/**
-  *print_num - recursion function
-  *@number: is the int
-  *@cont: how many send
-  *Return: 0 it is ok, 1 it is fails
- */
 
-int print_num(unsigned int number, int cont)
-{
-	if (number / 10)
-	{
-		cont++;
-		cont = print_num((number / 10), cont);
-	}
-	_putchar((number % 10) + '0');
-	return (cont);
-}
 /**
   *_printd - Print a int
   *@n: is a va_list that will receive a int
@@ -39,32 +23,38 @@ int _printd(va_list n)
 	}
 	return (cont);
 }
-/**
-  *print_numb -  print a binary of a int
-  *@number: is the int
-  *@cont: how many send
-  *Return: the cant of numbers send it
- */
-int print_numb(unsigned int number, int cont)
-{
-	if (number == 0)
-	{
-		return (cont - 1);
-	}
-	else
-	{
-		cont++;
-		cont = print_numb((number / 2), cont);
-		_putchar((number % 2) + '0');
-	}
-return (cont);
-}
+
 /**
   *_printb - print a binary
   *@n: the number to convert it
   *Return: the num send it
  */
+
 int _printb(va_list n)
+{
+	unsigned int number;
+	int aux;
+
+	number = (unsigned int)va_arg(n, int);
+	if (number == 0)
+	{
+		aux = 1;
+		_putchar('0');
+	}
+	else
+	{
+		aux = print_numbXo(number, 1, 2);
+	}
+	return (aux);
+}
+
+/**
+ *_printX - prints the number in hexadecimal
+ *@n: list that will take the number from va_arg
+ *Return: length of the hexadecimal number
+ */
+
+int _printX(va_list n)
 {
 	unsigned int number;
 	int aux;
@@ -77,8 +67,58 @@ int _printb(va_list n)
 	}
 	else
 	{
-		aux = print_numb(number, 1);
+		aux = print_numbXo(number, 1, 16);
 	}
 	return (aux);
+
 }
 
+/**
+ *_printx - prints the number in hexadecimal
+ *@n: list that will take the number from va_arg
+ *Return: length of the hexadecimal number
+ */
+
+int _printx(va_list n)
+{
+	unsigned int number;
+	int aux;
+
+	number = (int)va_arg(n, int);
+	if (number == 0)
+	{
+		aux = 1;
+		_putchar('0');
+	}
+	else
+	{
+		aux = print_numbxo(number, 1, 16);
+	}
+	return (aux);
+
+}
+
+/**
+ *_printo - prints the number in octal
+ *@n: list that will take the number from va_arg
+ *Return: length of the hexadecimal number
+ */
+
+int _printo(va_list n)
+{
+	unsigned int number;
+	int aux;
+
+	number = (int)va_arg(n, int);
+	if (number == 0)
+	{
+		aux = 1;
+		_putchar('0');
+	}
+	else
+	{
+		aux = print_numbXo(number, 1, 8);
+	}
+	return (aux);
+
+}
