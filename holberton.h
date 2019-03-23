@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 /*_string.c*/
-int _putchar(char c);
+int _putchar(char c, unsigned int size);
 int _strlen(char *s);
 
 /*print_str.c*/

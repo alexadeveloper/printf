@@ -14,7 +14,7 @@ int _printd(va_list n)
 	number = (int)va_arg(n, int);
 	if (number < 0)
 	{
-		_putchar('-');
+		_putchar('-', 1);
 		cont = print_num((number * (-1)), 2);
 	}
 	else
@@ -39,7 +39,7 @@ int _printb(va_list n)
 	if (number == 0)
 	{
 		aux = 1;
-		_putchar('0');
+		_putchar('0', 1);
 	}
 	else
 	{
@@ -63,7 +63,7 @@ int _printX(va_list n)
 	if (number == 0)
 	{
 		aux = 1;
-		_putchar('0');
+		_putchar('0', 1);
 	}
 	else
 	{
@@ -88,7 +88,7 @@ int _printx(va_list n)
 	if (number == 0)
 	{
 		aux = 1;
-		_putchar('0');
+		_putchar('0', 1);
 	}
 	else
 	{
@@ -113,7 +113,7 @@ int _printo(va_list n)
 	if (number == 0)
 	{
 		aux = 1;
-		_putchar('0');
+		_putchar('0', 1);
 	}
 	else
 	{

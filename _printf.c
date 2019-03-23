@@ -26,10 +26,10 @@ int _printf(const char *format, ...)
 			if (f != NULL)
 				cont += f(valist) - 2;
 			else
-				_putchar('%');
+				_putchar('%', 1);
 		}
 		if (f == NULL)
-			_putchar(*(format + i));
+			_putchar(*(format + i), 1);
 		i++;
 	}
 	va_end(valist);

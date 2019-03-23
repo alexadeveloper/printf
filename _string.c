@@ -8,9 +8,9 @@
   *Description: prints a character, One Error, return -1
  */
 
-int _putchar(char c)
+int _putchar(char c, unsigned int size)
 {
-	return (write(1, &c, 1));
+	return (write(1, &c, size));
 }
 
 /**

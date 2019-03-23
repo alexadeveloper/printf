@@ -19,9 +19,9 @@ int print_numbXo(unsigned int number, int cont, int base)
 		cont++;
 		cont = print_numbXo((number / base), cont, base);
 		if ((number % base) < 10)
-			_putchar((number % base) + '0');
+			_putchar((number % base) + '0', 1);
 		else
-			_putchar(((number % base) - 10) + 'A');
+			_putchar(((number % base) - 10) + 'A', 1);
 	}
 	return (cont);
 }
@@ -40,7 +40,7 @@ int print_num(unsigned int number, int cont)
 		cont++;
 		cont = print_num((number / 10), cont);
 	}
-	_putchar((number % 10) + '0');
+	_putchar((number % 10) + '0', 1);
 	return (cont);
 }
 
@@ -63,9 +63,9 @@ int print_numbxo(unsigned int number, int cont, int base)
 		cont++;
 		cont = print_numbxo((number / base), cont, base);
 		if ((number % base) < 10)
-			_putchar((number % base) + '0');
+			_putchar((number % base) + '0', 1);
 		else
-			_putchar(((number % base) - 10) + 'a');
+			_putchar(((number % base) - 10) + 'a', 1);
 	}
 	return (cont);
 }
