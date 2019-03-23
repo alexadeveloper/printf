@@ -4,7 +4,7 @@
 
 * **get_optc.c**: this is the function that selects what special option has been found and returns a pointer to the special function that prints the special value.
 
-* **print_num.c**: this is the file where all the functions that print numbers are found.
+* **print_num_#.c**: these are the files where all the functions that print numbers are found.
 
 * **print_numRec.c**: this is the file where all the recursive functions needed by *print_num.c* are found.
 
