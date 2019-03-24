@@ -4,13 +4,14 @@
 /**
   *_putchar- Prints a character
   *@c: the character send it
+  *@size: size of the buffer
   *Return: On succes 1
   *Description: prints a character, One Error, return -1
  */
 
-int _putchar(char c, unsigned int size)
+int _putchar(char *c, unsigned int size)
 {
-	return (write(1, &c, size));
+	return (write(1, c, size));
 }
 
 /**

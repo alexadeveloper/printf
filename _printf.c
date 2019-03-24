@@ -9,6 +9,7 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i = 0, cont = 0;
+	unsigned int ip = 0;
 	int (*f)(va_list) = NULL;
 	char *auxStr = (char *)format;
 
@@ -21,17 +22,19 @@ int _printf(const char *format, ...)
 		f = NULL;
 		if (*(format + i) == '%')
 		{
+			_putchar(auxStr, i - ip);
 			i++;
-			f = get_opc(auxStr + i);
+			f = get_opc(format + i);
 			if (f != NULL)
 				cont += f(valist) - 2;
 			else
-				_putchar('%', 1);
+				_putchar("%", 1);
+			auxStr += i - ip + 1;
+			ip = i + 1;
 		}
-		if (f == NULL)
-			_putchar(*(format + i), 1);
 		i++;
 	}
+	_putchar(auxStr, i - ip);
 	va_end(valist);
 	return (i + cont);
 }
