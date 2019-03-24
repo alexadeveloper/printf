@@ -6,7 +6,7 @@
  *Return: pointer to consequent function
  */
 
-int (*get_opc(char *c))(va_list)
+int (*get_opc(const char *c))(va_list)
 {
 	fmt fmts[] = {
 		{"c", _printc},

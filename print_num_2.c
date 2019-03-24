@@ -15,7 +15,7 @@ int _printu(va_list n)
 	if (number == 0)
 	{
 		aux = 1;
-		_putchar('0');
+		_putchar("0", 1);
 	}
 	else
 	{

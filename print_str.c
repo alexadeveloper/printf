@@ -11,7 +11,7 @@ int _printc(va_list c)
 	char string;
 
 	string = (char)va_arg(c, int);
-	_putchar(string);
+	_putchar(&string, 1);
 	return (1);
 }
 
@@ -24,24 +24,18 @@ int _printc(va_list c)
 int _prints(va_list s)
 {
 	unsigned int length = 0;
-	unsigned int i = 0;
 	char null[] = "(null)";
 	char *string;
 
 	string = va_arg(s, char *);
 	if (string == NULL)
 	{
-		for (; *(null + i) != '\0'; i++)
-			_putchar(null[i]);
+		_putchar(null, 6);
 		return (6);
 	}
 	length = _strlen(string);
-	while (i < length)
-	{
-		_putchar(string[i]);
-		i++;
-	}
-	return (i);
+	_putchar(string, length);
+	return (length);
 }
 
 /**
@@ -53,6 +47,6 @@ int _prints(va_list s)
 int _printpc(va_list c)
 {
 	(void) c;
-	_putchar('%');
+	_putchar("%", 1);
 	return (1);
 }

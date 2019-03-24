@@ -10,6 +10,8 @@
 
 int print_numbXo(unsigned int number, int cont, int base)
 {
+	char s1;
+
 	if (number == 0)
 	{
 		return (cont - 1);
@@ -19,9 +21,15 @@ int print_numbXo(unsigned int number, int cont, int base)
 		cont++;
 		cont = print_numbXo((number / base), cont, base);
 		if ((number % base) < 10)
-			_putchar((number % base) + '0');
+		{
+			s1 = (number % base) + '0';
+			_putchar(&s1, 1);
+		}
 		else
-			_putchar(((number % base) - 10) + 'A');
+		{
+			s1 = ((number % base) - 10) + 'A';
+			_putchar(&s1, 1);
+		}
 	}
 	return (cont);
 }
@@ -35,12 +43,15 @@ int print_numbXo(unsigned int number, int cont, int base)
 
 int print_num(unsigned int number, int cont)
 {
+	char s;
+
 	if (number / 10)
 	{
 		cont++;
 		cont = print_num((number / 10), cont);
 	}
-	_putchar((number % 10) + '0');
+	s = (number % 10) + '0';
+	_putchar(&s, 1);
 	return (cont);
 }
 
@@ -54,6 +65,8 @@ int print_num(unsigned int number, int cont)
 
 int print_numbxo(unsigned int number, int cont, int base)
 {
+	char s;
+
 	if (number == 0)
 	{
 		return (cont - 1);
@@ -63,9 +76,15 @@ int print_numbxo(unsigned int number, int cont, int base)
 		cont++;
 		cont = print_numbxo((number / base), cont, base);
 		if ((number % base) < 10)
-			_putchar((number % base) + '0');
+		{
+			s = (number % base) + '0';
+			_putchar(&s, 1);
+		}
 		else
-			_putchar(((number % base) - 10) + 'a');
+		{
+			s = ((number % base) - 10) + 'a';
+			_putchar(&s, 1);
+		}
 	}
 	return (cont);
 }
