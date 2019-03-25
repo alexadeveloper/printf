@@ -31,11 +31,11 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar("%", 1);
+				*(s + mallocInd) = '%';
+				mallocInd++;
 			}
 		}
-		if (f == NULL)
-			*(s + mallocInd) = *(format + i);
+		(f == NULL) ? *(s + mallocInd) = *(format + i) : 1;
 		i++;
 		mallocInd++;
 		if (mallocInd >= 1024)
