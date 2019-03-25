@@ -35,10 +35,8 @@ int _printf(const char *format, ...)
 				mallocInd++;
 			}
 		}
-		printf("\n\n%i\n\n", mallocInd);
 		(f == NULL) ? *(s + mallocInd) = *(format + i) : 1;
-
-       		i++;
+		i++;
 		mallocInd++;
 		if (mallocInd >= 1024)
 		{
@@ -46,7 +44,6 @@ int _printf(const char *format, ...)
 			mallocInd = 0;
 		}
 	}
-	printf("%i\n", mallocInd);
 	_putchar(s, mallocInd);
 	free(s);
 	va_end(valist);
