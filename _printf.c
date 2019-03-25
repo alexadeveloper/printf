@@ -40,11 +40,11 @@ int _printf(const char *format, ...)
 		mallocInd++;
 		if (mallocInd >= 1024)
 		{
-			_putchar(s, mallocInd + 1);
+			_putchar(s, mallocInd);
 			mallocInd = 0;
 		}
 	}
-	_putchar(s, --mallocInd);
+	_putchar(s, mallocInd);
 	free(s);
 	va_end(valist);
 	return (i + cont);
