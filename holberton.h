@@ -8,11 +8,14 @@
 int _putchar(char *c, unsigned int size);
 int _strlen(const char *s);
 char *_strcpy(char *dest, char *src);
+char *_strcpyE(char *dest, char *src);
+int _strlenE(const char *s);
 
 /*print_str.c*/
 int _printc(va_list c, char *s);
 int _prints(va_list c, char *s);
 int _printpc(va_list c, char *s);
+int _printS(va_list c, char *s);
 
 /*print_num_1.c*/
 int _printd(va_list n, char *s);

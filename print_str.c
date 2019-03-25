@@ -53,3 +53,27 @@ int _printpc(va_list c, char *s)
 	*s = '%';
 	return (1);
 }
+
+/**
+ *_printS - print a string
+ *@s: is a string in a va_list
+ *@str: pointer to the 1024 bytes buffer
+ *Return: 0 it is ok, 1 it is fail
+ */
+
+int _printS(va_list s, char *str)
+{
+	unsigned int length = 0;
+	char null[] = "(null)";
+	char *string;
+
+	string = va_arg(s, char *);
+	if (string == NULL)
+	{
+		_strcpy(str, null);
+		return (6);
+	}
+	length = _strlenE(string);
+	_strcpyE(str, string);
+	return (length);
+}
