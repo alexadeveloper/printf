@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	unsigned int i = 0, cont = 0, mallocInd = 0, tmp = 0;
 	int (*f)(va_list, char *) = NULL;
-	char *s = malloc(1100 * sizeof(char));
+	char *s = malloc(5000 * sizeof(char));
 
 	va_list(valist);
 	va_start(valist, format);
@@ -35,8 +35,10 @@ int _printf(const char *format, ...)
 				mallocInd++;
 			}
 		}
+		printf("\n\n%i\n\n", mallocInd);
 		(f == NULL) ? *(s + mallocInd) = *(format + i) : 1;
-		i++;
+
+       		i++;
 		mallocInd++;
 		if (mallocInd >= 1024)
 		{
@@ -44,6 +46,7 @@ int _printf(const char *format, ...)
 			mallocInd = 0;
 		}
 	}
+	printf("%i\n", mallocInd);
 	_putchar(s, mallocInd);
 	free(s);
 	va_end(valist);
