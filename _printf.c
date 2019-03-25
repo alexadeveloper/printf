@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				mallocInd++;
 			}
 		}
-		(f == NULL) ? *(s + mallocInd) = *(format + i) : 1;
+		(f == NULL) ? *(s + mallocInd) = *(format + i) : 0;
 		i++;
 		mallocInd++;
 		if (mallocInd >= 1024)
