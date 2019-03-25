@@ -8,33 +8,44 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, cont = 0;
-	unsigned int ip = 0;
-	int (*f)(va_list) = NULL;
-	char *auxStr = (char *)format;
+	unsigned int i = 0, cont = 0, mallocInd = 0, tmp = 0;
+	int (*f)(va_list, char *) = NULL;
+	char *s = malloc(1100 * sizeof(char));
 
 	va_list(valist);
 	va_start(valist, format);
-	if (format == NULL || (_strlen(auxStr) == 1 && *auxStr == '%'))
+	if (s == NULL || format == NULL || (_strlen(format) == 1 && *format == '%'))
 		return (-1);
 	while (format != NULL && *(format + i) != '\0')
 	{
 		f = NULL;
 		if (*(format + i) == '%')
 		{
-			_putchar(auxStr, i - ip);
 			i++;
 			f = get_opc(format + i);
 			if (f != NULL)
-				cont += f(valist) - 2;
+			{
+				tmp = f(valist, s + mallocInd);
+				cont += tmp - 2;
+				mallocInd += tmp - 1;
+			}
 			else
-				_putchar("%", 1);
-			auxStr += i - ip + 1;
-			ip = i + 1;
+			{
+				*(s + mallocInd) = '%';
+				mallocInd++;
+			}
 		}
+		(f == NULL) ? *(s + mallocInd) = *(format + i) : 1;
 		i++;
+		mallocInd++;
+		if (mallocInd >= 1024)
+		{
+			_putchar(s, mallocInd + 1);
+			mallocInd = 0;
+		}
 	}
-	_putchar(auxStr, i - ip);
+	_putchar(s, mallocInd);
+	free(s);
 	va_end(valist);
 	return (i + cont);
 }

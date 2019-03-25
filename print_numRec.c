@@ -5,13 +5,19 @@
   *@number: is the int
   *@cont: how many send
   *@base: base of the conversion to be done
+  *@s: pointer to the buffer of 1024 bytes
   *Return: the cant of numbers send it
  */
 
-int print_numbXo(unsigned int number, int cont, int base)
+int print_numbXo(unsigned int number, int cont, int base, char *s)
 {
-	char s1;
+	unsigned int tmp = number, contAux = 0;
 
+	while (tmp / base != 0)
+	{
+		tmp /= base;
+		contAux++;
+	}
 	if (number == 0)
 	{
 		return (cont - 1);
@@ -19,17 +25,11 @@ int print_numbXo(unsigned int number, int cont, int base)
 	else
 	{
 		cont++;
-		cont = print_numbXo((number / base), cont, base);
+		cont = print_numbXo((number / base), cont, base, s);
 		if ((number % base) < 10)
-		{
-			s1 = (number % base) + '0';
-			_putchar(&s1, 1);
-		}
+			*(s + contAux) = (number % base) + '0';
 		else
-		{
-			s1 = ((number % base) - 10) + 'A';
-			_putchar(&s1, 1);
-		}
+			*(s + contAux) = ((number % base) - 10) + 'A';
 	}
 	return (cont);
 }
@@ -38,20 +38,25 @@ int print_numbXo(unsigned int number, int cont, int base)
   *print_num - recursion function
   *@number: is the int
   *@cont: how many send
+  *@s: pointer to the buffer of 1024 bytes
   *Return: 0 it is ok, 1 it is fails
  */
 
-int print_num(unsigned int number, int cont)
+int print_num(unsigned int number, int cont, char *s)
 {
-	char s;
+	unsigned int tmp = number, contAux = 0;
 
+	while (tmp / 10)
+	{
+		tmp /= 10;
+		contAux++;
+	}
 	if (number / 10)
 	{
 		cont++;
-		cont = print_num((number / 10), cont);
+		cont = print_num((number / 10), cont, s);
 	}
-	s = (number % 10) + '0';
-	_putchar(&s, 1);
+	*(s + contAux) = (number % 10) + '0';
 	return (cont);
 }
 
@@ -60,13 +65,19 @@ int print_num(unsigned int number, int cont)
   *@number: is the int
   *@cont: how many send
   *@base: base of the conversion to be done
+  *@s: pointer to the buffer of 1024 bytes
   *Return: the cant of numbers send it
  */
 
-int print_numbxo(unsigned int number, int cont, int base)
+int print_numbxo(unsigned int number, int cont, int base, char *s)
 {
-	char s;
+	unsigned int tmp = number, contAux = 0;
 
+	while (tmp / base != 0)
+	{
+		tmp /= base;
+		contAux++;
+	}
 	if (number == 0)
 	{
 		return (cont - 1);
@@ -74,17 +85,11 @@ int print_numbxo(unsigned int number, int cont, int base)
 	else
 	{
 		cont++;
-		cont = print_numbxo((number / base), cont, base);
+		cont = print_numbxo((number / base), cont, base, s);
 		if ((number % base) < 10)
-		{
-			s = (number % base) + '0';
-			_putchar(&s, 1);
-		}
+			*(s + contAux) = (number % base) + '0';
 		else
-		{
-			s = ((number % base) - 10) + 'a';
-			_putchar(&s, 1);
-		}
+			*(s + contAux) = ((number % base) - 10) + 'a';
 	}
 	return (cont);
 }

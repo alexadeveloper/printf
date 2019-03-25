@@ -3,10 +3,11 @@
 /**
  *_printu - prints the number in decimal
  *@n: list that will take the number from va_arg
+ *@s: pointer to the buffer of 1024 bytes
  *Return: length of the hexadecimal number
  */
 
-int _printu(va_list n)
+int _printu(va_list n, char *s)
 {
 	unsigned int number;
 	int aux;
@@ -15,11 +16,11 @@ int _printu(va_list n)
 	if (number == 0)
 	{
 		aux = 1;
-		_putchar("0", 1);
+		*s = '0';
 	}
 	else
 	{
-		aux = print_numbXo(number, 1, 10);
+		aux = print_numbXo(number, 1, 10, s);
 	}
 	return (aux);
 
