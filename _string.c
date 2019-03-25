@@ -20,7 +20,7 @@ int _putchar(char *c, unsigned int size)
   *Return: the length of a string
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int cont = 0;
 
@@ -29,4 +29,23 @@ int _strlen(char *s)
 		cont++;
 	}
 	return (cont);
+}
+
+/**
+ *_strcpy - copies the string pointed to by src
+ *@dest: destination
+ *@src: source
+ *Return: pointer destination
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (*(src + i) != '\0')
+	{
+		*(dest + i) = *(src + i);
+		i++;
+	}
+	return (dest);
 }
