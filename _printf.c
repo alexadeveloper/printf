@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 			mallocInd = 0;
 		}
 	}
-	_putchar(s, mallocInd);
+	_putchar(s, --mallocInd);
 	free(s);
 	va_end(valist);
 	return (i + cont);
