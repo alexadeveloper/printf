@@ -20,6 +20,7 @@ int (*get_opc(const char *c))(va_list, char *)
 		{"o", _printo},
 		{"u", _printu},
 		{"S", _printS},
+		{"p", _printp},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;

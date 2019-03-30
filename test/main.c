@@ -10,9 +10,10 @@
 int main(void)
 {
 	int len, len2;
+	void *p = (void *)0x7fff5100b608;
 
-	len = _printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
-	len2 = printf("\\x01\\x02\\x03\\x04\\x05\\x06\\x07");
+	len = _printf("%p\n", p);
+	len2 = printf("%p\n", p);
 	fflush(stdout);
 	if (len != len2)
 	{

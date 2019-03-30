@@ -25,3 +25,33 @@ int _printu(va_list n, char *s)
 	return (aux);
 
 }
+
+/**
+ *_printp - prints the address in hexadecimal
+ *@n: list that will take the number from va_arg
+ *@s: pointer to the buffer of 1024 bytes
+ *Return: length of the hexadecimal number
+ */
+
+int _printp(va_list n, char *s)
+{
+	unsigned long long int number;
+	char null[] = "(nil)";
+	int aux;
+
+	number = va_arg(n, long long int);
+	if (number == 0)
+	{
+		aux = 6;
+		_strcpy(s, null);
+		return (aux);
+	}
+	else
+	{
+		*s = '0';
+		*(s + 1) = 'x';
+		aux = print_numbxo(number, 3, 16, s + 2);
+	}
+	return (aux);
+
+}
