@@ -42,7 +42,7 @@ int _printp(va_list n, char *s)
 	number = va_arg(n, long int);
 	if (number == 0)
 	{
-		aux = 6;
+		aux = 5;
 		_strcpy(s, null);
 		return (aux);
 	}
