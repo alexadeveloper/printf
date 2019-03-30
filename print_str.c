@@ -77,3 +77,23 @@ int _printS(va_list s, char *str)
 	_strcpyE(str, string);
 	return (length);
 }
+
+/**
+ *_printr - prints a string, in reverse.
+ *@valist: va_list to the string that will be printed.
+ *@s: pointer to the allocated memory.
+ *Return: the length of the string
+ */
+
+int _printr(va_list valist, char *s)
+{
+	char *str = va_arg(valist, char *);
+	int i = 0;
+	int j;
+
+	while (*(str + i) != '\0')
+		i++;
+	for (j = (i - 1); j >= 0; j--)
+		*(s + (i - j)) = *(str + j);
+	return (i);
+}
