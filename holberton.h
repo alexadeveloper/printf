@@ -29,9 +29,9 @@ int _printu(va_list n, char *s);
 int _printp(va_list n, char *s);
 
 /*print_numRec.c*/
-int print_numbXo(unsigned long long int n, int cont, int base, char *s);
+int print_numbXo(unsigned long int n, int cont, int base, char *s);
 int print_num(unsigned int n, int cont, char *s);
-int print_numbxo(unsigned long long int n, int cont, int base, char *s);
+int print_numbxo(unsigned long int n, int cont, int base, char *s);
 
 /*get_opt.c*/
 int (*get_opc(const char *c))(va_list, char *);
