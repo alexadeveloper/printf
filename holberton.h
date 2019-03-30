@@ -17,6 +17,7 @@ int _prints(va_list c, char *s);
 int _printpc(va_list c, char *s);
 int _printS(va_list c, char *s);
 int _printr(va_list c, char *s);
+int _printR(va_list c, char *s);
 
 /*print_num_1.c*/
 int _printd(va_list n, char *s);
