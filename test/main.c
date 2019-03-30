@@ -10,10 +10,9 @@
 int main(void)
 {
 	int len, len2;
-	void *p = (void *)0x7fff5100b608;
 
-	len = _printf("%p\n", p);
-	len2 = printf("%p\n", p);
+	len = _printf("%r", "\nThis sentence is retrieved from va_args!");
+	len2 = printf("!sgra_av morf deveirter si ecnetnes sihT\n");
 	fflush(stdout);
 	if (len != len2)
 	{
