@@ -9,7 +9,7 @@
   *Return: the cant of numbers send it
  */
 
-int print_numbXo(unsigned long long int number, int cont, int base, char *s)
+int print_numbXo(unsigned long int number, int cont, int base, char *s)
 {
 	unsigned int tmp = number, contAux = 0;
 
@@ -69,9 +69,9 @@ int print_num(unsigned int number, int cont, char *s)
   *Return: the cant of numbers send it
  */
 
-int print_numbxo(unsigned long long int number, int cont, int base, char *s)
+int print_numbxo(unsigned long int number, int cont, int base, char *s)
 {
-	unsigned long long int tmp = number, contAux = 0;
+	unsigned long int tmp = number, contAux = 0;
 
 	while (tmp / base != 0)
 	{

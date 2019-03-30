@@ -35,11 +35,11 @@ int _printu(va_list n, char *s)
 
 int _printp(va_list n, char *s)
 {
-	unsigned long long int number;
+	unsigned long int number;
 	char null[] = "(nil)";
 	int aux;
 
-	number = va_arg(n, long long int);
+	number = va_arg(n, long int);
 	if (number == 0)
 	{
 		aux = 6;
