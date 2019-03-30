@@ -94,6 +94,6 @@ int _printr(va_list valist, char *s)
 	while (*(str + i) != '\0')
 		i++;
 	for (j = (i - 1); j >= 0; j--)
-		*(s + (i - j)) = *(str + j);
+		*(s + (i - (j + 1))) = *(str + j);
 	return (i);
 }
