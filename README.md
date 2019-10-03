@@ -1,3 +1,12 @@
+# Printf
+### Objective:
+* Recreate the C library printf
+### Requirements:
+* Files should be compiled with gcc 4.8.4
+* No more than 5 functions per file
+* Files should end with a new line
+* No global variables allowed
+
 # Function _printf(char * str, ...)
 
 * **_printf.c**: this is the main function for our printf function. This will print char by char and check if there are special options to be printed.
@@ -13,3 +22,5 @@
 * **holberton.h**: this file is the header and has all the libraries, structures and prototypes declared.
 
 * **string.c**: this file has all the function to do things with strings (compare, length, putchar).
+### Authors
+Jessica Sandoval @alexadeveloper & Haroldo Velez @Haroldov
